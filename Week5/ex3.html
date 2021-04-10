@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .position
+        {
+            height: 400px;
+            background-color: burlywood;
+            background-image: url('./imgs/cat1.jpg');
+            background-position: bottom;
+            background-repeat: no-repeat;
+            padding: 30px;
+        }
+
+        .pseudo
+        {
+            border-style: solid;
+            border-color: blue;
+            border-width: medium;
+            text-align: center;
+            height: 110px;
+            margin : 10px 0px;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            color:darkcyan;
+            font-weight: bold;
+        }
+        input 
+        {
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            width: 200px;
+        }
+
+        .pseudo span
+        {
+            visibility: hidden;
+        }
+
+         
+        .pseudo:hover span
+        {
+            color: red;
+            font-weight: bold;
+            visibility: visible;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <h1>박스 모델</h1>
+    <div class="position">
+        박스모델 배경 꾸미기 입니다<br>
+        이미지 반복은 없으며<br>
+        이미지는 박스 아래쪽 가운데에 위치합니다
+    </div>
+    <div class="pseudo">
+        <p>
+            <label for="id">아이디</label>
+            <input type="text" id="id"><br>
+        </p>
+        <p>
+            질문 : 가상 클래스 선택자는 (<span> :콜론 </span>) 기호를 사용합니다 <br>
+            정답을 알려면 괄호안에 마우스를 가져 가세요<br>
+        </p>
+    </div>
+</body>
+
+</html>

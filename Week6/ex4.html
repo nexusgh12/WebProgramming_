@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .mainmenu{
+            background: #333;
+            height: 35px;
+            width: 500px;
+            padding-left: 40px;
+        }
+        .mainmenu ul{
+            background: #666;
+            display: none;
+        }
+
+        .mainmenu>li{
+            float: left;
+            list-style-type: none;
+            margin-right: 30px;
+            line-height: 35px;
+            color: #fff;
+        }
+
+        .mainmenu>li:hover ul{
+            display: block;
+            position: absolute;
+        }
+
+        .mainmenu>li ul li{
+            padding:0 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <ul class="mainmenu">
+        <li>대학소개
+            <ul>
+                <li>교육이념</li>
+                <li>대학상징</li>
+                <li>캠퍼스안내</li>
+            </ul>
+        </li>
+        <li>전공
+            <ul>
+                <li>소프트웨어 융합 대학</li>
+                <li>나노 융합 스쿨</li>
+                <li>미래 융합 스쿨</li>
+            </ul>
+        </li>
+        <li>대학생활
+            <ul>
+                <li>프로그램</li>
+                <li>장학제도</li>
+                <li>캘린더</li>
+            </ul>
+        </li>
+        <li>학사지원
+            <ul>
+                <li>수업</li>
+                <li>등록</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
