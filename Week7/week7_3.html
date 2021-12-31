@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{margin : 0; }
+    .menu_bar{
+        display : flex;
+        background-color: aquamarine;
+        justify-content: space-between;
+        align-items:center ;
+        padding: 8px, 12px;
+    }
+
+    .menu_item{
+        display : flex;
+        list-style: none;
+        padding-left: 0;
+    }
+    a{
+        text-decoration: none;
+        color : rgb(3, 59, 59);
+        font-weight: bold;
+    }
+    .menu_left, .menu_right {
+        font-size: 24px;
+    }
+    .menu_item li{
+        padding:8px 12px;
+    }
+
+    .menu_item li:hover{
+        background-color: blue;
+        border-radius: 5px;
+    }
+
+    @media screen and (min-width : 500px) and (max-width : 799px )
+    {
+        .menu_bar{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .menu_item{
+            flex-direction: column;
+            align-items: center;
+            width:100%;
+        }
+
+        .menu_item li{
+            width: 100%;
+            text-align: center;
+        }
+        .menu_right{
+            position : absolute;
+            right:10px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <nav class="menu_bar">
+        <div class="menu_left">
+           <a href="">Hallym</a>
+        </div>
+
+        <ul class="menu_item">
+            <li>대학소개</li>
+            <li>전공</li>
+            <li>대학생활</li>
+            <li>학사지원</li>
+        </ul>
+
+        <div class="menu_right">
+            <a href="">smartlead</a>
+        </div>
+    </nav>
+</body>
+
+</html>

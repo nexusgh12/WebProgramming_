@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Cities</h1>
+        <ul>
+        <li id="one" class="red">hallym</li>
+        <li id="two" class="red">software</li>
+        <li id="three" class="red">big data</li>
+        <li id="four">IoT</li>
+        </ul>
+        <input type = "button" onclick="domControl()" value="클릭하세요">
+    </div>
+    <script>
+        let domControl = () => {
+            const elems = document.querySelectorAll('li');
+
+            [...elems].forEach(elem =>{
+                if(elem.className === 'red'){
+                    elem.innerHTML='blue';
+                }
+                else{
+                    elem.innerHTML = 'black';
+                }
+            });
+
+            const heading = document.querySelector('h1');
+            heading.id = 'heading';
+            heading.innerHTML=heading.id;
+        }
+    </script>
+</body>
+</html>

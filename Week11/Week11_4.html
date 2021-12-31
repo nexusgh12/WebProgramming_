@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>이곳에 결과를 출력합니다</h3>
+  <input type="button" value="현재 날짜 출력" onclick="toDay()" ><br><br>
+  <input type="button" value="n일 후의 날짜 출력" onclick="fuDay()" >
+  <script>
+    const header = document.querySelector("h3");
+    let date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth()+ 1;
+    const dates = date.getDate();
+    const day = date.getDay();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    function toDay() {
+        
+        let dayName = '';
+        let dayTime = '';
+        switch (day){
+            case 0: 
+                dayName = '월';
+                break;
+            case 1: 
+                dayName = '화';
+                break;
+            case 2: 
+                dayName = '수';
+                break;
+            case 3: 
+                dayName = '목';
+                break;
+            case 4: 
+                dayName = '금';
+                break;
+            case 5: 
+                dayName = '토';
+                break;
+            case 6: 
+                dayName = '일';
+                break;
+        }
+        if(year <13)
+        {
+            dayTime = '오전';
+        }
+        else{
+            dayTime = '오후';
+        }
+        header.innerHTML = `${year} 년 ${month} 월 ${dates} 일 ${dayName}요일 ${dayTime} ${hours} 시 ${minutes} 분 `;
+    }
+
+    function fuDay() {
+        let input = prompt('며칠 후 입니까?');
+        date.setDate(Number(date.getDate()) + Number(input));
+        const year2 = date.getFullYear();
+        const month2 = date.getMonth()+ 1;
+        const dates2 = date.getDate();
+        header.innerHTML = `${year2} 년 ${month2} 월 ${dates2} 일`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        ul{
+            margin:0 auto; 
+            padding:0 0;
+        }
+        li{
+            list-style: none;
+            width: 100%;
+        }
+        body{
+            background: #e6e6e6;
+        }
+        .outer-menu{
+            display: flex;
+            width: 60vw;
+        }
+        .outer-menu-item{
+            position: relative;
+        }
+        .outer-menu-item:hover{
+            background: black;
+            color: white;
+        }
+        .menu-title{
+            display: block;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+        .inner-menu{
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background: white;
+            text-align: center;
+        }
+        .inner-menu-item>a{
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+        .inner-menu-item>a:hover{
+            background: black;
+            color: white;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function (){
+                $(this).find('.inner-menu').show();
+            }, function() {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul class ="outer-menu">
+            <li class="outer-menu-item">
+                <span class="menu-title">HTML5</span>
+                <ul class="inner-menu">
+                    <li class="inner-menu-item"><a href ="#">태그</a></li>
+                    <li class="inner-menu-item"><a href ="#">목록태그</a></li>
+                    <li class="inner-menu-item"><a href ="#">입력양식</a></li>
+                </ul>
+            </li>
+            <li class="outer-menu-item">
+                <span class="menu-title">CSS3</span>
+                <ul class="inner-menu">
+                    <li class="inner-menu-item"><a href ="#">테이블</a></li>
+                    <li class="inner-menu-item"><a href ="#">플렉스</a></li>
+                    <li class="inner-menu-item"><a href ="#">반응형웹</a></li>
+                </ul>
+            </li>
+            <li class="outer-menu-item">
+                <span class="menu-title">JavaScript</span>
+                <ul class="inner-menu">
+                    <li class="inner-menu-item"><a href ="#">함수</a></li>
+                    <li class="inner-menu-item"><a href ="#">클로저</a></li>
+                    <li class="inner-menu-item"><a href ="#">객체</a></li>
+                    <li class="inner-menu-item"><a href ="#">DOM</a></li>
+                    <li class="inner-menu-item"><a href ="#">내장함수</a></li>
+                    <li class="inner-menu-item"><a href ="#">이벤트</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

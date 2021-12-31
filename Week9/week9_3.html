@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>자바 스크립트 콜백 함수</title>
+    <script>
+        let callback = function(){ 
+            let num = new Array(5);
+            for(let i = 0; i < 5; i++)
+            {
+                num[i] = Math.floor(Math.random() * 100) + 1;
+                console.log(`콜백함수 실행(${num[i]})`);
+            }
+            console.log(Math.max.apply(null, num));
+       }
+        function func_call(f_call){
+            for(let i=0; i<3;i++){
+                console.log(`콜백 함수 ${i} 번째 호출`);
+                f_call();  //매개변수로 받은 함수 호출
+            }
+        }
+       func_call(callback);  //매개변수로 함수를 전달
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

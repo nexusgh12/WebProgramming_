@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>one true layout</title>
+<style>
+body{
+	width:500px; color:white;
+	margin:10px auto;
+}
+#middle{
+overflow: hidden;
+}
+#left{
+	float:left; width:150px; height:30px; background:red;
+}
+#right{
+	float:left; width:350px; height:50px; background:blue;
+}
+#top{
+	background:green;
+}
+#bottom{
+background:purple;
+}
+
+</style>
+</head>
+<body>
+<div id="top">top</div>
+<div id="middle">middle
+	<div id="left">left</div>
+	<div id="right">right</div>
+</div>
+
+<div id="bottom">bottom</div>
+</body>
+</html>

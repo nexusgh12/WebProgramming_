@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="password" type="password" value="hallym">
+    <input type="button" class="button" value="show" onclick="makeClickHandler()">
+    <script>
+         const pw = document.querySelector(".password");
+         const show = document.querySelector(".button");
+
+         function makeClickHandler() {
+             let isShow = false;
+             if (pw.type === "password") {
+                    pw.type = "text";
+                    isShow = true;
+                } 
+                else {
+                    pw.type = "password";
+                    isShow = false;
+                }
+ 
+         }
+    </script>
+</body>
+</html>

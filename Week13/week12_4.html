@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Mem(id, pass){
+            this.id = id;
+            this.pass = pass;
+            this.toString = function(){
+                return `id = ${this.id.value},  pass = ${this.pass.value}`;
+            }
+        }
+
+        const member = () => {
+            let id = document.querySelectorAll('input')[0];
+            let pass = document.querySelectorAll('input')[1];
+            return new Mem(id, pass);
+        }
+
+        const ch_focus = (id, pass) => {
+            id.onkeydown = function () {
+                if(8 <= id.value.length){
+                    pass.focus();
+                }
+            };
+            pass.onkeydown = function (event) {
+                if(event.keyCode == 8 && pass.value.length == 0){
+                    id.focus();
+                }
+            };
+        }
+
+        const check = () => {
+            let data = member();
+            ch_focus(data.id, data.pass);
+        }
+
+        const clear = (data) =>{
+            data.id.value = '';
+            data.pass.value = '';
+        }
+
+        const process = () => {
+            let con = document.getElementById('container');
+            let newP = document.createElement('p');
+            let data = member();
+            let newText = document.createTextNode(`${data.toString()}`);
+            newP.appendChild(newText);
+            con.appendChild(newP);
+            alert(`데이터 처리 완료\n${data.toString()}`);
+            clear(data);
+        }
+        window.onload = function() {
+            let btn = document.getElementById('add');
+            btn.onclick = process;
+            check();
+        };
+
+    </script>
+</head>
+<body>
+    <form>
+      id : <input type="text" maxlength="8">
+      <p></p>
+      pass : <input type="text" maxlength="8">
+      <p></p>
+      <input type="button" value="추가하기" id="add">
+    </form>
+    <h3>------ input list -------</h3>
+    <hr>
+    <div id='container'></div>
+  </body>
+  
+</html>

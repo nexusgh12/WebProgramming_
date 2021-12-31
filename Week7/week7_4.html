@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<style>
+   body {
+      width: 70vw;
+      margin: 10px auto;
+      color: white;
+      text-align: center;
+      display:flex;
+      flex-wrap:wrap;
+      flex-direction:column;
+      
+      
+    }
+#top{background:green; }
+#left{background:red; margin: 8px 4px 8px 0;}
+#center{background:purple;margin: 8px 4px 8px 4px;}
+#right{background:blue;margin: 8px 0 8px 4px;}
+#bottom{background:brown;}
+#middle{display:flex; flex-direction:row; height:300px; line-height : 300px;}
+.item{flex-grow: 1;justify-content:space-between;}
+</style>
+
+</head>
+<body>
+<div id="top">top</div>
+  <div id="middle">
+    <div class="item" id="left">left</div>
+    <div class="item" id="center">center</div>
+    <div class="item" id="right">right</div>
+  </div>
+  <div id="bottom">bottom</div>
+
+
+</body>
+</html>

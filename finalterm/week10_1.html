@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class = "password" type ="password" value="123">
+    <button class = "show">show</button>
+    <script>
+        const pass = document.querySelector('.password');
+        const show = document.querySelector('.show');
+        function makeClickHandler(){
+            let isShow = false;
+            return function(){
+                pass.setAttribute('type', isShow? 'password' : 'text');
+                isShow = !isShow;
+                show.innerHTML = isShow ? 'hide' : 'show';
+            };
+        }
+        show.onclick = makeClickHandler();
+        
+    </script>
+</body>
+</html>

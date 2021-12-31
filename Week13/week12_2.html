@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function childNodeChange(){
+            let divchild = document.querySelector('#container');
+            let pchild = document.querySelectorAll('.item');
+            let index1 = Math.floor(Math.random() * pchild.length);
+            let index2 = Math.floor(Math.random() * pchild.length);
+            divchild.insertBefore(divchild.children[index2], divchild.children[index1]);
+        }
+        function childNodeDelete(){
+            let divchild = document.querySelector('#container');
+            let pchild = document.querySelectorAll('.item');
+            let index1 = Math.floor(Math.random() * pchild.length);
+            divchild.removeChild(pchild[index1]);
+        }
+        function childNodeAdd(){
+            let pchild = document.querySelectorAll('.item');
+            const newElem = document.createElement('p');
+            const newText = document.createTextNode(`${pchild.length + 1}) 노드추가`);
+            newElem.appendChild(newText);
+            newElem.className = 'item';
+            document.querySelector('div').appendChild(newElem);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+      <p class="item">1) 사과</p>
+      <p class="item">2) 레몬</p>
+      <p class="item">3) 자두</p>
+      <p class="item">4) 키위</p>
+      <p class="item">5) 포도</p>
+    </div>
+    <input type="button" value="자식 요소 순서 변경" onclick="childNodeChange()">
+    <input type="button" value="자식 요소 삭제" onclick="childNodeDelete()">
+    <input type="button" value="자식 요소 추가" onclick="childNodeAdd()">
+  </body>
+  
+</html>

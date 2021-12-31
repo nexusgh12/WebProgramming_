@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>시각 효과</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").on("click", function () {
+                $("h1").slideUp(1000);
+            });
+            $("#btn2").on("click", function () {
+                $("h1").slideDown("slow");
+            });
+            $("#btn3").on("click", function () {
+                $("h1").slideToggle("fast");
+            });
+        });
+    </script>
+    <style type="text/css">
+        h1 {
+            width: 200px;
+            height: 200px;
+            background-color: #FF0;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">slideUp</button>
+    <button id="btn2">slideDown</button>
+    <button id="btn3">slideToggle</button>
+    <h1>내용</h1>
+</body>
+
+</html>

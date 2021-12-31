@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저</title>
+</head>
+<body>
+    <button class="toggle">toggle</button><br>
+    <div class="box">
+        클로저
+    </div>
+    <script>
+        let box = document.querySelector('.box');
+        let toggleBtn = document.querySelector('.toggle');
+        let toggle = (function (){
+            let isShow = false;
+            return function (){
+                box.style.display = isShow? 'block' : 'none';
+                isShow = !isShow;
+            }
+        })();
+
+        toggleBtn.onclick = toggle;
+    </script>
+</body>
+</html>

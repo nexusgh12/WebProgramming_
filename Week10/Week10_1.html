@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <script>
+        let fun1 = {
+            singer : 'Paul Blanco',
+            title : 'Wraith',
+            playtime : '3:36',
+            
+            play: function (cnt){
+                for(i = 1; i<cnt+1; i++){
+                    document.write(`${this.singer} : ${this.title} => ${i} 번째 재생<br>`);
+                }
+            }
+        };
+        fun1.play(5);
+    </script>
+
+</body>
+</html>

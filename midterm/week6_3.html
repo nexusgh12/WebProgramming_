@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>tableCSS</title>
+<style>
+*{margin:0px; padding:0px;}
+h1{padding-top:20px; padding-bottom:20px;}
+table{width:400px; text-align:center; border-collapse:collapse;}
+table thead{color:yellow; font-weight:bold; background:gray;}
+table tfoot{color:yellow; font-weight:bold; background:gray;}
+tbody tr:nth-child(2n){background:skyblue;}
+th, td{border-bottom: 2px solid blue; height:30px;}
+tr:hover > th, tr:hover > td{background:blue; color:white;}
+
+</style>
+</head>
+<body>
+	<h1>2021년 1학기 성적</h1>
+	<hr>
+	<table>
+	<thead>
+		<tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>황기태</td><td>80</td><td>70</td></tr>
+		<tr><td>이재문</td><td>80</td><td>70</td></tr>
+		<tr><td>이병은</td><td>80</td><td>70</td></tr>
+		<tr><td>김남윤</td><td>80</td><td>70</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><th>합</th><th>310</th><th>249</th></tr>
+	</tfoot>
+	</table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Account(name, money){
+            this.name = name;
+            this.money = money;
+        };
+        Account.prototype.deposit = function(dep_money){
+                this.money += dep_money;
+                document.write(`${dep_money} 입금 후 상태입니다.<br>`);
+                document.write(`예금주 : ${this.name}<br>현재 잔액 :  ${this.money}<br><br>`);
+            };
+        Account.prototype.withdraw = function(withdraw_money){
+                if(withdraw_money>this.money)
+                {
+                    document.write(`${withdraw_money}을 인출하려고 합니다.<br>`);
+                    document.write(`잔액 부족 : ${withdraw_money - this.money}<br><br>`);
+                }
+                else{
+                    this.money -= withdraw_money;
+                    document.write(`${withdraw_money} 인출 후 상태입니다.<br>`);
+                    document.write(`예금주 : ${this.name}<br>현재 잔액 :  ${this.money}<br><br>`);
+                }
+        };   
+        Account.prototype.display = function(){
+            document.write(`현재 상태 입니다.<br>`);
+            document.write(`예금주 : ${this.name}<br>현재 잔액 :  ${this.money}<br><br>`);
+        };
+
+        let account = new Account('정구현', 100000);
+        account.display();
+        account.deposit(50000);
+        account.withdraw(1000000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

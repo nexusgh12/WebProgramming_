@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>클로저를 사용한 counting</p>
+    <button id="increase">+</button>
+    <p id="count">0</p>
+    <script>
+        let increaseBtn = document.getElementById('increase');
+        let count = document.getElementById('count');
+
+        let increase = (function(){
+            let counter = 0;
+            return function(){
+                return ++counter;
+            };
+        }());
+
+        increaseBtn.onclick = function(){
+            count.innerHTML = increase();
+        };
+    </script>
+</body>
+</html>

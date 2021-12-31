@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 2px solid green;
+            border-collapse: collapse;
+        }
+        tr td {
+            border: 2px solid green;
+
+            }
+        tr td:nth-child(1){
+            background-color: greenyellow;
+            text-align: center;
+            }
+        input[type=reset]:hover
+        {
+            background-color: skyblue;
+        }
+        input[type=submit]:hover
+        {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <table>
+        <tr>
+			<td><label for="id">아이디</label></td>
+			<td><input type="text" id="id"></td>
+		</tr>
+        <tr>
+			<td><label for="password">패스워드</label></td>
+			<td><input type="password" id="password"></td>
+		</tr>
+        <tr>
+			<td>취미</td>
+			<td><input type="checkbox" id="board" >보드타기 
+                <input type="checkbox" id="surf" >써핑 
+                <input type="checkbox" id="game" >게임 
+                <input type="checkbox" id="fire" >불멍하기
+            </td>
+		</tr>
+    </table>
+    <input type="reset" value="취소" >
+    <input type="submit" value="전송" >
+    </form>
+</body>
+</html>

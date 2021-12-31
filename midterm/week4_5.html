@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>회원가입 폼</title>
+</head>
+<body>
+<form>
+<table border="1">
+<tr>
+<th colspan="2">회원가입</th>
+</tr>
+<tr>
+<th>아이디</th><td><input type="text" required></td>
+</tr>
+<tr>
+<th>패스워드</th><td><input type="password"  required></td>
+</tr>
+<tr>
+<th>성별</th><td><input type="radio" value="male"> 남 <input type="radio" value="female"> 여</td>
+</tr>
+<tr>
+<th>국적</th>
+<td><input type="text" list="country">
+<datalist id="country">
+<option value="한국">
+<option value="일본">
+</datalist>
+</td>
+<tr>
+<th>가족사항</th>
+<td>
+<input type="checkbox" name="family" value ="parents" checked>부모 
+<input type="checkbox" name="family" value="brother"> 형제자매
+<input type="checkbox" name="family" value="wife"> 배우자
+<input type="checkbox" name="family" value="child"> 자식
+</td>
+</tr>
+<tr>
+<th>이력서</th><td><input type="file" value="resume"></td>
+</tr>
+<tr>
+<th>생년월일</th><td><input type="date" value = "birth"></td>
+</tr>
+<tr>
+<td colspan="2"><input type="submit" value="가입">&nbsp;<input type="reset" value="재작성"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

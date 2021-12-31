@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>onload로 이미지 크기 출력</title>
+    <script>
+        function changeImage() {
+            const sel = document.getElementById("sel");
+            const img = document.getElementById("myImg");
+            img.onload = function () { // 이미지 로딩 완료후 이미지 크기 출력
+                const mySpan = document.getElementById("mySpan");
+                mySpan.innerHTML = img.width +"x"+ img.height;
+            }
+            const index = sel.selectedIndex; // 선택된 옵션 인덱스
+            img.src = sel.options[index].value; // <option>의 value 속성
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value=""> === 선택하세요 ===</option>
+            <option value="image/flow1.jpg">사진1</option>
+            <option value="image/flow2.jpg">사진2</option>
+            <option value="image/flow3.jpg">사진3</option>
+            <option value="image/flow4.jpg">사진4</option>
+        </select>
+        <span id="mySpan">이미지 크기</span>
+    </form>
+    <p>
+        <img id="myImg" src="image/flow7.jpg" alt=".">
+    </p>
+
+</html>

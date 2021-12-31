@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title></title>
+<style>
+.flex-container{
+	width:600px;
+	margin:10px; padding:15px;
+	border-radius:5px;
+	background:skyblue;
+	display:flex; /*flex box container에 display속성을 flex로 지정*/
+	flex-wrap:no-wrap
+}
+.flex-item{
+	margin:10px;
+	padding:20px;
+	color:white;
+	text-align:center;
+	border-radius:5px;
+	background:blue;
+}
+.flex-item:nth-child(2n){
+
+	flex-basis:1000px;
+}
+.flex-item:nth-child(2){
+order:5;
+}
+</style>
+</head>
+<body>
+<div class="flex-container">
+	<div class="flex-item">item1</div>
+	<div class="flex-item">item2</div>
+	<div class="flex-item">item3</div>
+	<div class="flex-item">item4</div>
+	<div class="flex-item">item5</div>
+</div>
+</body>
+</html>

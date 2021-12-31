@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>주사위 합 계산하기</title>
+        <script>
+              //이곳에 dice_play() 함수를 다음과 같은 방법으로 작성하고 결과를 제시하세요
+            //1) 함수 선언문 
+            function dice_play(number){
+                let count = 0;
+                for(let i = 0; i<10; i++)
+                {
+                    let num1 = Math.floor(Math.random() * 6) + 1;
+                    let num2 = Math.floor(Math.random() * 6) + 1;
+                    let sum = num1 + num2;
+                    if(sum == number)
+                    {
+                        document.write(`${num1} + ${num2} = ${sum} <br>`);
+                        count +=1 ;
+                    }
+                }
+                
+                return count;
+            }
+            //2) 함수 표현식 – 익명함수
+                let dice_play2 = function(number){
+                    let count = 0;
+                    for(let i = 0; i<10; i++)
+                    {
+                        let num1 = Math.floor(Math.random() * 6) + 1;
+                        let num2 = Math.floor(Math.random() * 6) + 1;
+                        let sum = num1 + num2;
+                        if(sum == number)
+                        {
+                            document.write(`${num1} + ${num2} = ${sum} <br>`);
+                            count +=1 ;
+                        }
+                    }
+                    
+                    return count;
+                }
+            //3) 화살표 함수
+                let dice_play3 = number =>{
+                    let count = 0;
+                    for(let i = 0; i<10; i++)
+                    {
+                        let num1 = Math.floor(Math.random() * 6) + 1;
+                        let num2 = Math.floor(Math.random() * 6) + 1;
+                        let sum = num1 + num2;
+                        if(sum == number)
+                        {
+                            document.write(`${num1} + ${num2} = ${sum} <br>`);
+                            count +=1 ;
+                        }
+                    }
+                    
+                    return count;
+                }
+        </script>
+    </head>
+    <body>
+       <script>
+           document.write(`주사위 눈의 합이 8이 되는 횟수: ${dice_play(8)} <br>`);
+          document.write(`주사위 눈의 합이 6이 되는 횟수: ${dice_play(6)} <br>`);
+       </script>      
+    </body>
+    
+</html>

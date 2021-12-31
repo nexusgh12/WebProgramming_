@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pop() {
+            win = window.open('popUp.html', '', 'width = 300, height=300');
+            if (win == null) {
+                alert('팝업이 차단 되었습니다\n팝업 차단을 해제하고 새로고침하세요');
+            }
+            win.moveTo(300, 100);
+        }
+
+        function winOpen() {
+            let keyword = document.getElementById('keyword');
+            let place = 'width=500, height=500, top=300, left=300';
+            switch (keyword.value) {
+                case '한림대학교':
+                    win = window.open('http://www.hallym.ac.kr', 'blank', place);
+                    win.moveBy(100, 100);
+                    break;
+                case '도서관':
+                    win = window.open('http://library.hallym.ac.kr', 'blank', place);
+                    win.moveBy(100, 100);
+                    break;
+                case '스마트리드':
+                    win = window.open('http://smartlead.hallym.ac.kr', 'blank', place);
+                    win.moveBy(100, 100);
+                    break;
+            }
+            keyword.value = '';
+        }
+        let winClose=function(){
+            win.close();
+        }
+        let win=null;
+        window.onload=pop;
+    </script>
+</head>
+
+<body>
+    <h3>윈도우 객체 활용</h3>
+    <hr>
+    <form>
+        키워드를 입력하세요 : <input type="text" id="keyword">
+        <p></p>
+        <input type="button" value="open" onclick="winOpen()">
+        <input type="button" value="close" onclick="winClose()">
+    </form>
+</body>
+
+</html>

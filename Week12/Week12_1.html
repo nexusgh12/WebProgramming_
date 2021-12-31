@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Mouse Event</title>
+    <script>
+        window.onload = function () {
+        let mouse = document.querySelector('span');
+        let el = document.querySelector('div');
+        let scale = 1, width = 1;
+        let down = () => { mouse.style.fontSize = '20px'; }
+        let up = () => { mouse.style.fontSize = '16px'; }
+        let over = () => { mouse.style.backgroundColor = 'violet'; }
+        let out = () => { mouse.style.backgroundColor = "white"; }
+        let mwheel = () => {
+        if (event.wheelDelta < 0) { // 휠을 아래로 굴릴 때
+        width--; // 폭 1 감소
+        if (width < 0) width = 0; // 폭이 0보다 작아지지 않게
+        }
+        else // 휠을 위로 굴릴 때
+        width++; // 폭 1 증가
+        el.style.borderStyle = "ridge";
+        el.style.borderWidth = width + "px";
+        el.style.borderColor = 'blue';
+        }
+        mouse.addEventListener('mousedown', down);
+        mouse.addEventListener('mouseup', up);
+        mouse.addEventListener('mouseover', over);
+        mouse.addEventListener('mouseout', out);
+        el.addEventListener('wheel', mwheel);
+        }
+        </script>
+        
+</head>
+
+<body>
+    <h3>마우스 관련 이벤트 리스너</h3>
+    <hr>
+    <div>마우스 관련
+    <span>이벤트</span>가 발생합니다.
+    </div>
+    </body>
+    
+</html>

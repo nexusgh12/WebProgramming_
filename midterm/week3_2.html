@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>label, field,,</title>
+</head>
+<body>
+	<h1>선택사항을 직접 입력하세요</h1>
+	<form>
+		<fieldset>
+		<legend>학술지정보</legend>
+		<label for="major">전공 분야 : </label>
+		<input type="text" list="majorlist"><br><br>
+		<datalist id="majorlist">
+			<option value="1">1</option>
+		</datalist>
+		<label for="date">등록일 : </label>
+		<input type="date"><br><br>
+		<label for="mail_check">메일 수신 : </label>
+		<input type="checkbox" name="agree" value="수신동의">수신동의
+		<input type="checkbox" name="disagree" value="수신거부">수신거부<br><br>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소"><br><br>
+		</fieldset>
+	</form>
+</body>
+</html>

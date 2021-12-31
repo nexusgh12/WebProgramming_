@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let calc = (function () {
+            let sum = 0;
+            return function () {
+                if (this.checked) sum += parseInt(this.value);
+                else sum -= parseInt(this.value);
+                document.getElementById("sumtext").value = sum;
+            }
+        })();
+        window.onload = function () {
+            const query = 'input[type=checkbox]';
+            const chbox = document.querySelectorAll(query);
+            chbox.forEach((el) => {
+                el.addEventListener('click', calc);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        1) 모자 1만원 <input type="checkbox" value="10000"><br>
+        2) 구두 3만원 <input type="checkbox" value="30000"><br>
+        3) 가방 8만원 <input type="checkbox" value="80000"><br>
+        4) 신발 5만원 <input type="checkbox" value="50000"><br>
+        지불하실 금액 <input type="text" id="sumtext" value="0"> <input type="reset" value=" 취소 ">
+    </form>
+</body>
+
+</html>

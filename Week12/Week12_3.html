@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.onload = function () {
+            // 미리 로딩해둘 이미지 이름 배열
+            const images = document.querySelector('#myimg');
+            const files =
+                ["image/flow1.jpg", "image/flow2.jpg", "image/flow3.jpg", "image/flow4.jpg","image/flow5.jpg", "image/flow6.jpg", "image/flow7.jpg"];
+            const imgs = new Array();
+            for (let i = 0; i < files.length; i++) {
+                imgs[i] = new Image(); // 이미지 객체 생성
+                imgs[i].src = files[i]; // 이미지 로딩
+            }
+            let next = 1; // 다음 이미지 출력
+            images.onclick = function () {
+                images.src = imgs[next++].src;
+                //
+                this.src = imgs[next].src; // 이미지 변경
+                //
+                next++; // 다음 이미지
+                next %= imgs.length; // 개수를 넘으면 처음으로
+            };
+        }
+    </script>
+    </head>
+    
+    <body>
+        <h3>new Image()로 이미지 로딩</h3>
+        <hr>
+        이미지를 클릭하면 다음 이미지를 보여줍니다.
+        <p>
+            <img id="myimg" src="image/flow1.jpg" alt=".">
+    </body>
+</html>
